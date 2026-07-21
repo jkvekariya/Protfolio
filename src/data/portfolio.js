@@ -1,13 +1,11 @@
 export const portfolioData = {
   personal: {
-    name: "John Doe",
+    name: "Jay Vekariya",
     role: "Full Stack Developer",
     titles: [
-      "Full Stack Developer",
-      "MERN Stack Developer",
+      "Frontend Developer",
       "Backend Developer",
-      "Frontend Engineer",
-      "API Developer",
+      "Full Stack Developer",
     ],
     introduction: "I build premium, high-performance, and scalable web applications. With a passion for clean code and stunning aesthetics, I turn complex problems into elegant solutions.",
     photo: "https://via.placeholder.com/400x400", // Replace with actual photo
@@ -112,23 +110,26 @@ export const portfolioData = {
       { name: "HTML", level: 95 },
       { name: "CSS", level: 90 },
       { name: "JavaScript", level: 95 },
-      { name: "React", level: 95 },
-      { name: "Angular", level: 75 },
+      { name: "React", level: 90 },
+      { name: "Tailwind", level: 85 },
+      { name: "Bootstrap", level: 85 },
     ],
     backend: [
       { name: "Node.js", level: 85 },
       { name: "Express", level: 85 },
-      { name: "PHP", level: 80 },
-      { name: "Python", level: 75 },
+      { name: "RESTful API", level: 88 },
+      { name: "JWT Auth", level: 80 },
     ],
     database: [
       { name: "MongoDB", level: 90 },
       { name: "MySQL", level: 85 },
+      { name: "SQL", level: 88 },
       { name: "Firebase", level: 80 },
     ],
     tools: [
       { name: "Git", level: 90 },
       { name: "GitHub", level: 95 },
+      { name: "Postman", level: 88 },
       { name: "Docker", level: 70 },
       { name: "Linux", level: 75 },
     ]

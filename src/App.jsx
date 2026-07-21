@@ -1,5 +1,4 @@
-import Cursor from "@/components/Cursor";
-import ParticlesBackground from "@/components/ParticlesBackground";
+
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -13,8 +12,7 @@ import Footer from "@/components/Footer";
 export default function App() {
   return (
     <>
-      <Cursor />
-      <ParticlesBackground />
+      
       <Navbar />
       <main className="relative z-10 flex flex-col min-h-screen">
         <HeroSection />

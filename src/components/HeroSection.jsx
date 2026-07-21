@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
 import Hero3DScene from "./Hero3DScene";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa";
@@ -12,16 +12,82 @@ const socialIcons = [
   { icon: FaEnvelope, link: `mailto:${portfolioData.personal.contact.email}` },
 ];
 
-export default function HeroSection() {
-  const [titleIndex, setTitleIndex] = useState(0);
+const titles = portfolioData.personal.titles;
 
+const TITLES = ["Frontend Developer", "Backend Developer", "Full Stack Developer"];
+
+function TypingText() {
+  const [displayText, setDisplayText] = useState("");
+  const [showCursor, setShowCursor] = useState(true);
+
+  // All mutable loop state lives in refs — never stale
+  const titleIndexRef = useRef(0);
+  const isDeletingRef = useRef(false);
+  const timeoutRef = useRef(null);
+
+  // Blinking cursor
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((prev) => (prev + 1) % portfolioData.personal.titles.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    const id = setInterval(() => setShowCursor((p) => !p), 500);
+    return () => clearInterval(id);
   }, []);
 
+  // Typing loop — runs once, uses refs for all loop state
+  useEffect(() => {
+    let charIndex = 0;
+
+    const tick = () => {
+      const current = TITLES[titleIndexRef.current];
+
+      if (!isDeletingRef.current) {
+        // Type one character
+        charIndex += 1;
+        setDisplayText(current.slice(0, charIndex));
+
+        if (charIndex === current.length) {
+          // Finished typing — pause then start deleting
+          timeoutRef.current = setTimeout(() => {
+            isDeletingRef.current = true;
+            timeoutRef.current = setTimeout(tick, 45);
+          }, 1800);
+        } else {
+          timeoutRef.current = setTimeout(tick, 90);
+        }
+      } else {
+        // Delete one character
+        charIndex -= 1;
+        setDisplayText(current.slice(0, charIndex));
+
+        if (charIndex === 0) {
+          // Finished deleting — move to next title
+          isDeletingRef.current = false;
+          titleIndexRef.current = (titleIndexRef.current + 1) % TITLES.length;
+          timeoutRef.current = setTimeout(tick, 300);
+        } else {
+          timeoutRef.current = setTimeout(tick, 50);
+        }
+      }
+    };
+
+    timeoutRef.current = setTimeout(tick, 500);
+    return () => clearTimeout(timeoutRef.current);
+  }, []); // runs only once on mount
+
+  return (
+    <div className="flex items-center h-8 md:h-10">
+      <span className="text-xl md:text-2xl font-semibold text-white">
+        {displayText}
+      </span>
+      <span
+        className="ml-0.5 text-xl md:text-2xl font-light text-white"
+        style={{ opacity: showCursor ? 1 : 0 }}
+      >
+        |
+      </span>
+    </div>
+  );
+}
+
+export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -32,39 +98,31 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-primary font-mono text-lg md:text-xl tracking-wider mb-2">
-              Welcome to my developer space
-            </h2>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
-              Hi, I'm <span className="text-gradient">{portfolioData.personal.name.split(' ')[0]}</span>
+            <p className="text-primary font-mono text-sm md:text-base tracking-wider mb-2">
+              Welcome to my portfolio
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
+              Hi, I'm{" "}
+              <span className="text-gradient">
+                {portfolioData.personal.name}
+              </span>
             </h1>
           </motion.div>
 
+          {/* Typing animation — no border, no box, plain white */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="h-12 md:h-16"
           >
-            <AnimatePresence mode="wait">
-              <motion.h2
-                key={titleIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-                className="text-3xl md:text-5xl font-semibold text-muted neon-text"
-              >
-                {portfolioData.personal.titles[titleIndex]}
-              </motion.h2>
-            </AnimatePresence>
+            <TypingText />
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg text-muted/80 max-w-lg leading-relaxed"
+            className="text-sm md:text-base text-muted/80 max-w-lg leading-relaxed"
           >
             {portfolioData.personal.introduction}
           </motion.p>
@@ -77,13 +135,13 @@ export default function HeroSection() {
           >
             <a
               href="#projects"
-              className="px-8 py-3 rounded-md bg-primary text-black font-bold text-lg hover:shadow-[0_0_20px_rgba(0,229,255,0.8)] transition-all duration-300 transform hover:-translate-y-1"
+              className="px-6 py-2.5 rounded-md bg-primary text-black font-bold text-sm hover:shadow-[0_0_20px_rgba(0,229,255,0.8)] transition-all duration-300 transform hover:-translate-y-1"
             >
               View Projects
             </a>
             <a
               href="#contact"
-              className="px-8 py-3 rounded-md border-2 border-secondary text-secondary font-bold text-lg hover:bg-secondary hover:text-white hover:shadow-[0_0_20px_rgba(124,58,237,0.8)] transition-all duration-300 transform hover:-translate-y-1"
+              className="px-6 py-2.5 rounded-md bg-white/10 text-white font-bold text-sm hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1"
             >
               Contact Me
             </a>
@@ -103,7 +161,7 @@ export default function HeroSection() {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted hover:text-highlight hover:scale-125 transition-all duration-300"
+                  className="text-muted hover:text-primary hover:scale-125 transition-all duration-300"
                 >
                   <Icon size={28} />
                 </a>
@@ -123,9 +181,9 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Decorative blobs */}
+      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-[100px] pointer-events-none" />
     </section>
   );
 }
