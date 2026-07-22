@@ -18,7 +18,7 @@ export const portfolioData = {
     },
     social: {
       github: "https://github.com/jkvekariya",
-      linkedin: "https://linkedin.com/in/jkvekariya",
+      linkedin: "https://www.linkedin.com/in/jayvekariya1590/",
       instagram: "https://instagram.com/jkvekariya",
     },
   },
