@@ -4,14 +4,14 @@ import { FaGraduationCap } from "react-icons/fa";
 
 const education = [
   {
-    degree: "Master of Computer Science",
-    school: "Tech University",
-    year: "2018 - 2020",
+    degree: "Higher Secondary (HSC)",
+    school: "Shubhlaxmi High School",
+    year: "2022 – 2023",
   },
   {
-    degree: "Bachelor of Engineering",
-    school: "State Engineering College",
-    year: "2014 - 2018",
+    degree: "Bachelor of Computer Applications (BCA)",
+    school: "Shree Uttar Gujarat BCA College",
+    year: "2023 – 2026",
   },
 ];
 
@@ -39,18 +39,15 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-4 relative group"
+            className="lg:col-span-4 flex justify-center items-center"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-primary/50 glass-panel">
-              <img
-                src={portfolioData.personal.photo}
-                alt={portfolioData.personal.name}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-              {/* Fallback pattern if placeholder is used */}
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center pointer-events-none group-hover:bg-black/10 transition-colors"></div>
-            </div>
+            <motion.img
+              src={portfolioData.personal.photo}
+              alt={portfolioData.personal.name}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className="max-h-[500px] w-auto object-contain select-none"
+            />
           </motion.div>
 
           {/* Text and Stats Column */}
@@ -62,12 +59,10 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h3 className="text-2xl font-bold text-white mb-4">
-                I'm a <span className="text-primary">{portfolioData.personal.role}</span> based in {portfolioData.personal.contact.location}
+                I'm a <span className="text-primary">Full Stack Web Developer</span>
               </h3>
-              <p className="text-muted leading-relaxed text-lg">
-                {portfolioData.personal.introduction} 
-                <br /><br />
-                My journey in web development started with a deep curiosity about how digital experiences are crafted. Over the years, I've honed my skills in modern frameworks and scalable backend architectures. I'm passionate about creating software that not only functions flawlessly but also provides an unforgettable visual experience.
+              <p className="text-muted leading-relaxed">
+                {portfolioData.personal.introduction}
               </p>
             </motion.div>
 
@@ -77,7 +72,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6"
+              className="grid grid-cols-3 gap-6"
             >
               {portfolioData.stats.map((stat, index) => (
                 <div key={index} className="glass-panel p-6 rounded-xl text-center group hover:border-primary transition-colors duration-300">

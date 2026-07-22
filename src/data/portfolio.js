@@ -7,27 +7,25 @@ export const portfolioData = {
       "Backend Developer",
       "Full Stack Developer",
     ],
-    introduction: "I build premium, high-performance, and scalable web applications. With a passion for clean code and stunning aesthetics, I turn complex problems into elegant solutions.",
-    photo: "https://via.placeholder.com/400x400", // Replace with actual photo
+    introduction: "I'm a Full Stack Web Developer passionate about building modern, responsive, and scalable web applications. I recently completed my Bachelor of Computer Applications (BCA) and enjoy creating clean, efficient, and user-friendly digital experiences. I'm constantly learning new technologies, building real-world projects, and improving my skills in both frontend and backend development. My goal is to develop high-quality applications that solve real problems and deliver great user experiences.",
+    photo: "/jay.png", // Replace with actual photo
     resumeUrl: "/resume.pdf", // Place resume in public folder
     contact: {
-      email: "hello@johndoe.com",
-      phone: "+1 (555) 123-4567",
-      location: "San Francisco, CA",
+      email: "vekariyajay985@gmail.com",
+      phone: "+91 7600312235",
+      location: "Surat, Gujarat",
       availability: "Available for freelance work",
     },
     social: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      instagram: "https://instagram.com",
+      github: "https://github.com/jkvekariya",
+      linkedin: "https://linkedin.com/in/jkvekariya",
+      instagram: "https://instagram.com/jkvekariya",
     },
   },
   stats: [
-    { label: "Experience", value: "5+ Years" },
-    { label: "Projects Completed", value: "50+" },
-    { label: "Technologies", value: "20+" },
-    { label: "Happy Clients", value: "30+" },
+    { label: "Experience", value: "2+ Years" },
+    { label: "Projects Completed", value: "7+" },
+    { label: "Technologies", value: "13+" },
   ],
   services: [
     {
@@ -137,66 +135,66 @@ export const portfolioData = {
   projects: [
     {
       id: "project-1",
-      title: "SaaS Analytics Dashboard",
-      description: "A comprehensive analytics dashboard for modern SaaS businesses featuring real-time data visualization and a dark theme.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+      title: "Bellavita",
+      description: "A full-featured beauty & lifestyle e-commerce web application with product listings, cart, user authentication, and order management — built with the MERN stack.",
+      image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=1000",
       category: "Full Stack",
-      techStack: ["React", "JavaScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose", "CSS"],
       features: [
-        "Real-time analytics",
-        "Role-based access control",
-        "Dark mode optimized UI",
-        "Interactive charts"
+        "Product listing & filtering",
+        "User authentication",
+        "Shopping cart & orders",
+        "Responsive UI"
       ],
       links: {
-        github: "https://github.com",
-        live: "https://example.com",
-        caseStudy: "#"
+        github: "https://github.com/jkvekariya/Bellavita-Project",
+        live: "",
+        caseStudy: ""
       },
       status: "Completed",
-      date: "Jan 2024"
+      date: "2024"
     },
     {
       id: "project-2",
-      title: "E-Commerce Platform",
-      description: "High-performance e-commerce platform with 3D product preview capabilities and seamless checkout experience.",
-      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1000",
-      category: "Frontend",
-      techStack: ["React", "Three.js", "Framer Motion", "Stripe", "Firebase"],
+      title: "Fashion E-Commerce",
+      description: "A modern fashion e-commerce platform with dynamic product browsing, secure authentication, cart management, and a clean responsive interface.",
+      image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=1000",
+      category: "Full Stack",
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Mongoose"],
       features: [
-        "3D product viewer",
-        "Secure payments",
-        "Smooth page transitions",
-        "Admin panel"
+        "Product catalog",
+        "User auth & sessions",
+        "Cart & checkout flow",
+        "Admin dashboard"
       ],
       links: {
-        github: "https://github.com",
-        live: "https://example.com",
-        caseStudy: "#"
+        github: "https://github.com/jkvekariya/Fashion_E-commerce",
+        live: "",
+        caseStudy: ""
       },
-      status: "In Progress",
-      date: "Nov 2023"
+      status: "Completed",
+      date: "2024"
     },
     {
       id: "project-3",
-      title: "AI Prompt Marketplace",
-      description: "A platform for sharing and discovering advanced AI prompts. Features a robust backend and complex search capabilities.",
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
+      title: "Free-Com Job Portal",
+      description: "A scalable freelance & job portal where employers can post jobs and candidates can apply. Built with a robust backend using PostgreSQL, Prisma ORM, and Redis for caching.",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=1000",
       category: "Full Stack",
-      techStack: ["Node.js", "Express", "MongoDB", "React", "Redux"],
+      techStack: ["React.js", "Node.js", "PostgreSQL", "Prisma", "Redis"],
       features: [
-        "Advanced search & filter",
-        "User authentication",
-        "Payment integration",
-        "Rating system"
+        "Job posting & applications",
+        "User roles (employer/candidate)",
+        "Redis caching",
+        "Prisma ORM queries"
       ],
       links: {
-        github: "https://github.com",
-        live: "https://example.com",
-        caseStudy: "#"
+        github: "https://github.com/jkvekariya/FreeCom-job-portal",
+        live: "",
+        caseStudy: ""
       },
-      status: "Completed",
-      date: "Aug 2023"
+      status: "In Progress",
+      date: "2025"
     }
   ]
 };

@@ -71,8 +71,7 @@ export default function Navbar() {
           >
             <a
               href={portfolioData.personal.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Jay_Vekariya_Resume.pdf"
               className="px-5 py-2 rounded border border-primary text-primary hover:bg-primary/10 transition-colors text-sm font-medium neon-border"
             >
               Resume
@@ -110,8 +109,7 @@ export default function Navbar() {
               ))}
               <a
                 href={portfolioData.personal.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                download="Jay_Vekariya_Resume.pdf"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="px-8 py-3 mt-4 rounded border border-primary text-primary hover:bg-primary/10 transition-colors text-lg font-medium neon-border"
               >

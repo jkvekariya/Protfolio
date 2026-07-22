@@ -2,13 +2,12 @@ import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
 import Hero3DScene from "./Hero3DScene";
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const socialIcons = [
-  { icon: FaGithub, link: portfolioData.personal.social.github },
+  { icon: FaGithub,   link: portfolioData.personal.social.github },
   { icon: FaLinkedin, link: portfolioData.personal.social.linkedin },
-  { icon: FaTwitter, link: portfolioData.personal.social.twitter },
-  { icon: FaInstagram, link: portfolioData.personal.social.instagram },
+  { icon: FaInstagram,link: portfolioData.personal.social.instagram },
   { icon: FaEnvelope, link: `mailto:${portfolioData.personal.contact.email}` },
 ];
 
