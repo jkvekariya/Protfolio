@@ -57,7 +57,7 @@ export default function ExperienceSection() {
                       <h4 className="text-lg text-muted mb-4 font-medium">
                         {exp.company}
                       </h4>
-                      <p className="text-muted/80 leading-relaxed mb-6">
+                      <p className="text-muted/80 leading-relaxed mb-6 whitespace-pre-line">
                         {exp.description}
                       </p>
                       

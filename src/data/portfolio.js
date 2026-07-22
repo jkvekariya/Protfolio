@@ -65,56 +65,48 @@ export const portfolioData = {
       icon: "FaPaintBrush"
     },
     {
-      id: "optimization",
-      title: "Performance Optimization",
-      description: "Enhancing application speed, SEO, and Lighthouse scores to deliver a blazing-fast user experience.",
-      icon: "FaBolt"
+      id: "responsive",
+      title: "Responsive Web Design",
+      description: "Designing and building websites that look beautiful and function flawlessly across all devices and screen sizes.",
+      icon: "FaLaptopCode"
     },
     {
-      id: "devops",
-      title: "Deployment & DevOps",
-      description: "Automating CI/CD pipelines and deploying applications to AWS, Vercel, and modern cloud platforms.",
-      icon: "FaRocket"
+      id: "security",
+      title: "Authentication & Security",
+      description: "Implementing robust security practices, JWT authentication, secure logins, and protected data endpoints.",
+      icon: "FaShieldAlt"
     }
   ],
   experience: [
     {
       id: 1,
-      company: "TechNova Solutions",
-      position: "Senior Full Stack Engineer",
-      duration: "2022 - Present",
-      description: "Lead the development of scalable SaaS applications. Improved application performance by 40% and implemented complex 3D visualizations.",
-      technologies: ["React", "JavaScript", "Node.js", "MongoDB", "Three.js"]
+      company: "Roshni Websolution",
+      position: "Web Developer Intern",
+      duration: "Dec 2025 – Feb 2026",
+      description: "• Built responsive web pages using React.js, Node js, Mongodb, Mongoose and CSS.\n• Connected frontend with backend APIs.\n• Fixed bugs and improved website performance.\n• Worked with Git and GitHub to manage code.",
+      technologies: ["React.js", "Node.js", "MongoDB", "Mongoose", "CSS", "Git", "GitHub"]
     },
     {
       id: 2,
-      company: "CyberWeb Agency",
-      position: "Frontend Developer",
-      duration: "2020 - 2022",
-      description: "Developed award-winning landing pages and e-commerce platforms. Specialized in micro-animations and responsive design.",
-      technologies: ["HTML/CSS", "JavaScript", "React", "GSAP", "Tailwind"]
-    },
-    {
-      id: 3,
-      company: "StartUp Inc.",
-      position: "Junior Developer",
-      duration: "2018 - 2020",
-      description: "Assisted in building REST APIs and creating dashboard interfaces for internal tools.",
-      technologies: ["PHP", "MySQL", "jQuery", "Bootstrap"]
+      company: "Personal & College Projects",
+      position: "Full Stack Web Developer (Academic Projects)",
+      duration: "2023 – 2026",
+      description: "• Built full-stack web applications from scratch.\n• Designed responsive user interfaces and backend APIs.\n• Integrated databases and authentication systems.\n• Deployed and maintained personal and college projects.",
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "Tailwind CSS", "Bootstrap"]
     }
   ],
   skills: {
     frontend: [
-      { name: "HTML", level: 95 },
-      { name: "CSS", level: 90 },
-      { name: "JavaScript", level: 95 },
-      { name: "React", level: 90 },
-      { name: "Tailwind", level: 85 },
-      { name: "Bootstrap", level: 85 },
+      { name: "HTML", level: 93 },
+      { name: "CSS", level: 95 },
+      { name: "JavaScript", level: 75 },
+      { name: "React", level: 80 },
+      { name: "Tailwind", level: 67 },
+      { name: "Bootstrap", level: 75 },
     ],
     backend: [
-      { name: "Node.js", level: 85 },
-      { name: "Express", level: 85 },
+      { name: "Node.js", level: 80 },
+      { name: "Express", level: 60 },
       { name: "RESTful API", level: 88 },
       { name: "JWT Auth", level: 80 },
     ],
@@ -122,14 +114,12 @@ export const portfolioData = {
       { name: "MongoDB", level: 90 },
       { name: "MySQL", level: 85 },
       { name: "SQL", level: 88 },
-      { name: "Firebase", level: 80 },
+      { name: "Firebase", level: 70 },
     ],
     tools: [
       { name: "Git", level: 90 },
       { name: "GitHub", level: 95 },
       { name: "Postman", level: 88 },
-      { name: "Docker", level: 70 },
-      { name: "Linux", level: 75 },
     ]
   },
   projects: [

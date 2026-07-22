@@ -112,7 +112,7 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Featured <span className="text-gradient">Projects</span>
+            My <span className="text-gradient">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full neon-border"></div>
           <p className="text-muted mt-6 max-w-2xl mx-auto text-lg">

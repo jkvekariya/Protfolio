@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
-import { FaReact, FaServer, FaCode, FaNetworkWired, FaDatabase, FaPaintBrush, FaBolt, FaRocket } from "react-icons/fa";
+import { FaReact, FaServer, FaCode, FaNetworkWired, FaDatabase, FaPaintBrush, FaBolt, FaRocket, FaLaptopCode, FaShieldAlt } from "react-icons/fa";
 
 const iconMap = {
   FaReact,
@@ -11,6 +11,8 @@ const iconMap = {
   FaPaintBrush,
   FaBolt,
   FaRocket,
+  FaLaptopCode,
+  FaShieldAlt,
 };
 
 // 3D Tilt Card Component
