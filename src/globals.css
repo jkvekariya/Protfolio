@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme inline {
@@ -9,7 +9,8 @@
   --color-highlight: var(--highlight);
   --color-muted: var(--muted);
   
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-urbanist);
   --font-mono: var(--font-mono);
 }
 
@@ -20,7 +21,8 @@
   --primary: #00E5FF;
   --secondary: #7C3AED;
   --highlight: #00FFB3;
-  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-urbanist: 'Urbanist', sans-serif;
   --font-mono: 'Fira Code', monospace;
 }
 
@@ -35,6 +37,14 @@ body {
     linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   background-position: center center;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-urbanist), sans-serif;
+}
+
+header a, nav a {
+  font-family: var(--font-urbanist), sans-serif;
 }
 
 @layer utilities {
